@@ -81,14 +81,14 @@ SELECT * FROM role;
 SELECT * FROM pracownicy;
 SELECT * FROM wypozyczenia;
 
-copy public.kategorie (id_kategoria, nazwa) FROM 'D:/UG - Matematyka/Bazy danych/Baza danych na zaliczenie/CSV/kategorie.csv' DELIMITER ';';
-copy public.autorzy (id_autor, imie, nazwisko) FROM 'D:/UG - Matematyka/Bazy danych/Baza danych na zaliczenie/CSV/autorzy.csv' DELIMITER ';';
-copy public.wydawnictwa (id_wydawnictwo, nazwa) FROM 'D:/UG - Matematyka/Bazy danych/Baza danych na zaliczenie/CSV/wydawnictwa.csv' DELIMITER ';';
-copy public.ksiazki (id_ksiazka, isbn, id_kategoria, tytul, opis, id_autor, id_wydawnictwo, rok_wydania) FROM 'D:/UG - Matematyka/Bazy danych/Baza danych na zaliczenie/CSV/książki.csv' DELIMITER ';';
-copy public.czytelnicy (id_czytelnik, imie, nazwisko, login, haslo, email, telefon, data_urodzenia) FROM 'D:/UG - Matematyka/Bazy danych/Baza danych na zaliczenie/CSV/czytelnicy.csv' DELIMITER ';';
-copy public.role (id_rola, nazwa) FROM 'D:/UG - Matematyka/Bazy danych/Baza danych na zaliczenie/CSV/role.csv' DELIMITER ';';
-copy public.pracownicy (id_pracownik, login, haslo, id_rola) FROM 'D:/UG - Matematyka/Bazy danych/Baza danych na zaliczenie/CSV/pracownicy.csv' DELIMITER ';';
-copy public.wypozyczenia (id_wypozyczenie, id_czytelnik, id_ksiazka, data_wypozyczenia, id_pracownik_wypozyczenie, data_oddania, id_pracownik_oddanie) FROM 'D:/UG - Matematyka/Bazy danych/Baza danych na zaliczenie/CSV/wypożyczenia.csv' DELIMITER ';';
+copy public.kategorie (id_kategoria, nazwa) FROM '/path/to/your_file.csv' DELIMITER ';';
+copy public.autorzy (id_autor, imie, nazwisko) FROM '/path/to/your_file.csv' DELIMITER ';';
+copy public.wydawnictwa (id_wydawnictwo, nazwa) FROM '/path/to/your_file.csv' DELIMITER ';';
+copy public.ksiazki (id_ksiazka, isbn, id_kategoria, tytul, opis, id_autor, id_wydawnictwo, rok_wydania) FROM '/path/to/your_file.csv' DELIMITER ';';
+copy public.czytelnicy (id_czytelnik, imie, nazwisko, login, haslo, email, telefon, data_urodzenia) FROM '/path/to/your_file.csv' DELIMITER ';';
+copy public.role (id_rola, nazwa) FROM '/path/to/your_file.csv' DELIMITER ';';
+copy public.pracownicy (id_pracownik, login, haslo, id_rola) FROM '/path/to/your_file.csv' DELIMITER ';';
+copy public.wypozyczenia (id_wypozyczenie, id_czytelnik, id_ksiazka, data_wypozyczenia, id_pracownik_wypozyczenie, data_oddania, id_pracownik_oddanie) FROM '/path/to/your_file.csv' DELIMITER ';';
 
 -- (1) Pokaż 10 najczęścieiej wypożyczających czytelników.
 create view top_czytelnicy as select
